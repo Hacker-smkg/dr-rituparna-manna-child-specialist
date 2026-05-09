@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dr. Rituparna Manna – Best Child Specialist, Kalyani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --plum:#7B2D8B;--violet:#9B4DB5;--pink:#E91E8C;--rose:#F48FB1;
+  --lavender:#F3E5F5;--cream:#FEF9FF;--white:#FFFFFF;
+  --text:#2C1A3A;--muted:#7B6B87;--border:#E8D5F0;--gold:#F4A825;
+  --sh:0 6px 28px rgba(123,45,139,.12);--sh-lg:0 20px 60px rgba(123,45,139,.2);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 5vw;height:66px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.scrolled{box-shadow:var(--sh)}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo{width:42px;height:42px;background:linear-gradient(135deg,var(--plum),var(--violet));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.brand-text .t1{display:block;font-family:'Playfair Display',serif;font-size:14.5px;font-weight:600;color:var(--plum);line-height:1.2}
+.brand-text .t2{display:block;font-size:10px;color:var(--muted);letter-spacing:.5px}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{padding:6px 13px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;font-weight:600;transition:background .2s,color .2s}
+.nav-links a:hover{background:var(--lavender);color:var(--plum)}
+.nav-cta{background:var(--plum)!important;color:#fff!important}
+.nav-cta:hover{background:#5a1f68!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:23px;height:2px;background:var(--plum);border-radius:2px}
+.mob-nav{display:none;position:fixed;top:66px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid var(--border);padding:14px 5vw 22px;flex-direction:column;gap:4px;box-shadow:var(--sh)}
+.mob-nav.open{display:flex}
+.mob-nav a{padding:11px 16px;border-radius:8px;text-decoration:none;color:var(--text);font-weight:600}
+.mob-nav a:hover{background:var(--lavender)}
+.mob-cta{background:var(--plum)!important;color:#fff!important;text-align:center;margin-top:6px}
+.hero{min-height:100vh;background:linear-gradient(140deg,#4A1060 0%,#7B2D8B 45%,#9B4DB5 100%);display:flex;align-items:center;padding:90px 5vw 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:550px;height:550px;background:radial-gradient(circle,rgba(233,30,140,.25) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:5%;width:350px;height:350px;background:radial-gradient(circle,rgba(244,168,37,.12) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+.bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bubble{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.1);animation:float 10s ease-in-out infinite}
+.b1{width:180px;height:180px;top:10%;left:5%}
+.b2{width:120px;height:120px;top:60%;right:8%;animation-delay:2s}
+.b3{width:80px;height:80px;bottom:20%;left:40%;animation-delay:4s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1);opacity:.4}50%{transform:translateY(-20px) scale(1.05);opacity:.7}}
+.hero-grid{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:100px;margin-bottom:20px;animation:su .7s ease both}
+.hero-badge .dot{width:8px;height:8px;background:#FFD700;border-radius:50%;animation:bk 2s infinite}
+.hero-badge span{font-size:12px;color:rgba(255,255,255,.9);font-weight:600}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.5rem);color:#fff;line-height:1.15;margin-bottom:12px;animation:su .7s .1s ease both}
+.hero h1 em{font-style:italic;color:#FFD700}
+.hero-desc{font-size:15px;color:rgba(255,255,255,.65);line-height:1.78;margin-bottom:26px;animation:su .7s .2s ease both}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;animation:su .7s .3s ease both}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.82);padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;animation:su .7s .4s ease both}
+.btn-p{background:#fff;color:var(--plum);padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(255,255,255,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,255,255,.4)}
+.btn-p-out{background:transparent;color:#fff;padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;border:1.5px solid rgba(255,255,255,.4);transition:background .2s}
+.btn-p-out:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;gap:24px;margin-top:36px;animation:su .7s .5s ease both;flex-wrap:wrap}
+.hst .num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#FFD700;line-height:1}
+.hst .lbl{font-size:10.5px;color:rgba(255,255,255,.5);margin-top:3px}
+.doc-photo-wrap{position:relative;animation:su .7s .15s ease both}
+.doc-photo-frame{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);border:3px solid rgba(255,255,255,.2)}
+.doc-photo-frame img{width:100%;display:block;object-fit:cover;max-height:520px}
+.doc-badge{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.doc-badge-av{width:48px;height:48px;background:linear-gradient(135deg,var(--plum),var(--pink));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.doc-badge-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--plum)}
+.doc-badge-deg{font-size:11px;color:var(--muted);margin-top:2px}
+.doc-badge-rating{margin-left:auto;text-align:center}
+.doc-badge-rating .sc{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--plum);line-height:1}
+.doc-badge-rating .st{color:var(--gold);font-size:13px}
+@keyframes su{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+section{padding:80px 5vw}
+.wrap{max-width:1200px;margin:0 auto}
+.stag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);background:rgba(123,45,139,.09);padding:4px 11px;border-radius:4px;margin-bottom:13px}
+.sec-h{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.2vw,2.6rem);color:var(--text);line-height:1.2;margin-bottom:12px}
+.sec-d{color:var(--muted);font-size:15px;line-height:1.75;max-width:580px}
+.fi{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.fi.vis{opacity:1;transform:translateY(0)}
+#about{background:var(--cream)}
+.about-g{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
+.about-panel{background:linear-gradient(150deg,var(--plum),#5a1f68);border-radius:20px;padding:38px;position:relative;overflow:hidden}
+.about-panel::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(233,30,140,.3) 0%,transparent 70%);border-radius:50%}
+.about-photo{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.25);margin-bottom:18px;position:relative;z-index:1}
+.about-panel h3{font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;margin-bottom:4px;position:relative;z-index:1}
+.about-panel .sub{color:rgba(255,255,255,.6);font-size:12.5px;margin-bottom:20px;position:relative;z-index:1}
+.cred-list{list-style:none;display:flex;flex-direction:column;gap:9px;position:relative;z-index:1}
+.cred-list li{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.82);font-size:13px}
+.cred-list li::before{content:'';width:6px;height:6px;background:#FFD700;border-radius:50%;flex-shrink:0}
+.tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;position:relative;z-index:1}
+.ptag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:4px 10px;border-radius:5px;font-size:10.5px;font-weight:600}
+.about-text p{color:var(--muted);line-height:1.82;margin-bottom:14px;font-size:15px}
+.spec-g{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.spec-c{background:#fff;border-radius:10px;padding:14px;border:1px solid var(--border);transition:box-shadow .2s,border-color .2s}
+.spec-c:hover{box-shadow:var(--sh);border-color:var(--rose)}
+.spec-c .ico{font-size:18px;margin-bottom:6px}
+.spec-c h4{font-size:12.5px;font-weight:700;color:var(--plum)}
+#services{background:#fff}
+.svc-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:18px;margin-top:38px}
+.svc-c{background:var(--cream);border-radius:14px;padding:26px;border:1px solid var(--border);transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden}
+.svc-c::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--plum),var(--pink));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-c:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:var(--rose)}
+.svc-c:hover::before{transform:scaleX(1)}
+.svc-ico{width:50px;height:50px;background:linear-gradient(135deg,rgba(123,45,139,.1),rgba(233,30,140,.15));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px}
+.svc-c h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);margin-bottom:7px}
+.svc-c p{color:var(--muted);font-size:13px;line-height:1.65}
+#timings{background:linear-gradient(140deg,#4A1060 0%,#7B2D8B 100%);position:relative;overflow:hidden}
+#timings::before{content:'';position:absolute;top:-30%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(233,30,140,.2) 0%,transparent 60%);border-radius:50%}
+#timings .stag{background:rgba(255,255,255,.1);color:#FFD700}
+#timings .sec-h{color:#fff}
+#timings .sec-d{color:rgba(255,255,255,.55)}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;margin-top:44px}
+.t-c{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px;backdrop-filter:blur(8px);transition:background .2s,border-color .2s}
+.t-c:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.25)}
+.t-hd{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.t-num{width:38px;height:38px;background:var(--pink);border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px;flex-shrink:0}
+.t-nm{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff}
+.t-tp{font-size:10px;color:var(--rose);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.t-rows{display:flex;flex-direction:column;gap:7px}
+.t-row{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.05);border-radius:7px;padding:9px 13px}
+.t-day{color:rgba(255,255,255,.65);font-size:12.5px;font-weight:600}
+.t-time{color:#FFD700;font-size:12.5px;font-weight:700}
+.t-addr{color:rgba(255,255,255,.45);font-size:11.5px;margin-top:12px;line-height:1.6}
+#booking{background:var(--lavender)}
+.bk-wrap{background:#fff;border-radius:20px;border:1px solid var(--border);box-shadow:var(--sh-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1.6fr;margin-top:38px}
+.b-side{background:linear-gradient(150deg,#5a1f68,var(--plum));padding:38px 30px;display:flex;flex-direction:column;gap:20px}
+.b-side h3{font-family:'Playfair Display',serif;color:#fff;font-size:1.5rem}
+.b-side p{color:rgba(255,255,255,.6);font-size:13px;line-height:1.72}
+.b-feat{display:flex;align-items:flex-start;gap:11px;color:rgba(255,255,255,.75);font-size:13px}
+.b-ico{width:27px;height:27px;background:rgba(255,255,255,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.b-form{padding:36px 32px}
+.b-form h3{font-family:'Playfair Display',serif;color:var(--text);font-size:1.4rem;margin-bottom:20px}
+.steps{display:flex;align-items:center;gap:7px;margin-bottom:24px}
+.st{display:flex;align-items:center;gap:7px}
+.stc{width:26px;height:26px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;color:var(--muted);transition:all .3s}
+.stc.active{background:var(--plum);color:#fff}
+.stc.done{background:#5a1f68;color:#fff}
+.stl{font-size:11.5px;color:var(--muted);font-weight:600}
+.stl.active{color:var(--plum);font-weight:700}
+.stline{flex:1;height:1px;background:var(--border)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:10.5px;font-weight:700;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-family:'Nunito',sans-serif;font-size:13.5px;color:var(--text);background:var(--cream);transition:border-color .2s,box-shadow .2s;outline:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--plum);box-shadow:0 0 0 3px rgba(123,45,139,.1)}
+.fg textarea{resize:vertical;min-height:76px}
+.btn-sub{width:100%;background:var(--plum);color:#fff;padding:13px;border:none;border-radius:9px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;box-shadow:0 4px 18px rgba(123,45,139,.4);margin-top:6px}
+.btn-sub:hover{background:#5a1f68;transform:translateY(-1px)}
+.fs{display:none}
+.fs.active{display:block}
+.sbox{display:none;text-align:center;padding:36px 16px}
+.stick{width:68px;height:68px;background:linear-gradient(135deg,var(--plum),var(--pink));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:28px}
+.sbox h4{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--plum);margin-bottom:9px}
+.sbox p{color:var(--muted);font-size:13.5px}
+#reviews{background:#fff}
+.r-banner{background:linear-gradient(140deg,#4A1060,#7B2D8B);border-radius:16px;padding:30px 34px;display:flex;align-items:center;gap:44px;margin-bottom:36px;flex-wrap:wrap}
+.rbig .num{font-family:'Playfair Display',serif;font-size:4rem;color:#fff;line-height:1}
+.rbig .stars{font-size:18px;color:#FFD700;margin-top:3px}
+.rbig .cnt{color:rgba(255,255,255,.5);font-size:12px;margin-top:5px}
+.rbars{flex:1;min-width:190px}
+.br{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.brl{font-size:11.5px;color:rgba(255,255,255,.55);width:36px}
+.brt{flex:1;height:5px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+.brf{height:100%;background:#FFD700;border-radius:3px}
+.rplats{display:flex;flex-direction:column;gap:11px}
+.rplat{background:rgba(255,255,255,.07);border-radius:9px;padding:11px 14px}
+.rplat .pn{color:rgba(255,255,255,.5);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px}
+.rplat .ps{color:#FFD700;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700}
+.rplat .pc{color:rgba(255,255,255,.4);font-size:10.5px}
+.rev-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.rev-c{background:var(--cream);border-radius:14px;padding:22px;border:1px solid var(--border);transition:box-shadow .2s;position:relative}
+.rev-c:hover{box-shadow:var(--sh)}
+.rev-c::before{content:'"';position:absolute;top:12px;right:16px;font-size:4rem;color:var(--border);font-family:'Playfair Display',serif;line-height:1}
+.rev-hd{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.rev-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--pink));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px}
+.rev-nm{font-weight:700;color:var(--plum);font-size:13.5px}
+.rev-dt{font-size:10.5px;color:var(--muted)}
+.rev-st{color:#FFD700;font-size:13px;margin-bottom:9px}
+.rev-tx{color:var(--muted);font-size:13.5px;line-height:1.65}
+#faq{background:var(--cream)}
+.faq-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+.faq-i{background:#fff;border-radius:11px;border:1px solid var(--border);overflow:hidden}
+.faq-q{padding:17px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background .2s;font-weight:700;font-size:13.5px;color:var(--text);gap:10px}
+.faq-q:hover{background:var(--lavender)}
+.faq-arr{width:22px;height:22px;border-radius:6px;background:var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .2s}
+.faq-arr svg{width:11px;height:11px;stroke:var(--muted);fill:none;stroke-width:2.5}
+.faq-i.open .faq-arr{transform:rotate(180deg);background:var(--plum)}
+.faq-i.open .faq-arr svg{stroke:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s,padding .35s;padding:0 18px;color:var(--muted);font-size:13.5px;line-height:1.7}
+.faq-i.open .faq-a{max-height:300px;padding:0 18px 16px}
+#contact{background:#fff}
+.con-g{display:grid;grid-template-columns:1fr 1fr;gap:38px;margin-top:38px}
+.c-cards{display:flex;flex-direction:column;gap:14px}
+.c-card{background:var(--cream);border-radius:11px;padding:18px;border:1px solid var(--border);display:flex;align-items:flex-start;gap:13px;transition:box-shadow .2s}
+.c-card:hover{box-shadow:var(--sh)}
+.cico{width:42px;height:42px;background:linear-gradient(135deg,var(--plum),var(--pink));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.clbl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.cval{font-size:13.5px;font-weight:700;color:var(--text);margin-top:3px}
+.cval a{color:inherit;text-decoration:none}
+.cval a:hover{color:var(--plum)}
+.map-b{border-radius:16px;overflow:hidden;height:400px;border:1px solid var(--border);box-shadow:var(--sh)}
+.map-b iframe{width:100%;height:100%;border:none}
+footer{background:linear-gradient(140deg,#3d1050,#5a1f68);padding:54px 5vw 28px;color:rgba(255,255,255,.55)}
+.foot-g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;max-width:1200px;margin:0 auto 36px}
+.flogo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.flogo-ico{width:36px;height:36px;background:var(--pink);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.flogo span{font-family:'Playfair Display',serif;color:#fff;font-size:14px;font-weight:600}
+.fbrand p{font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.4);margin-bottom:18px}
+.socials{display:flex;gap:9px}
+.soc{width:32px;height:32px;background:rgba(255,255,255,.07);border-radius:7px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);text-decoration:none;font-size:12px;transition:background .2s,color .2s;font-weight:700}
+.soc:hover{background:var(--pink);color:#fff}
+.fcol h4{color:#fff;font-size:12.5px;font-weight:700;margin-bottom:14px;letter-spacing:.5px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol ul li a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12.5px;transition:color .2s}
+.fcol ul li a:hover{color:var(--rose)}
+.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot p{font-size:11.5px}
+.fbot a{color:var(--rose);text-decoration:none}
+@media (max-width:960px){.hero-grid,.about-g,.con-g{grid-template-columns:1fr}.bk-wrap{grid-template-columns:1fr}.b-side{order:2}.foot-g{grid-template-columns:1fr 1fr}.faq-g{grid-template-columns:1fr}}
+@media (max-width:640px){.nav-links{display:none}.hamburger{display:flex}section{padding:60px 5vw}.hero{padding:90px 5vw 50px}.hero-stats{gap:18px}.hero-actions{flex-direction:column}.btn-p,.btn-p-out{text-align:center}.fr,.foot-g{grid-template-columns:1fr}.r-banner{flex-direction:column;gap:22px}.b-form{padding:24px 18px}.map-b{height:270px}}
+.wa{position:fixed;bottom:22px;right:22px;z-index:50;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.5);text-decoration:none;transition:transform .2s}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:26px;height:26px;fill:#fff}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="nav-brand" href="#"><div class="nav-logo">👶</div><div class="brand-text"><span class="t1">Dr. Rituparna Manna</span><span class="t2">Child Specialist · Kalyani, West Bengal</span></div></a>
+  <div class="nav-links"><a href="#about">About</a><a href="#services">Services</a><a href="#timings">Timings</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a><a href="#booking" class="nav-cta">Book Appointment</a></div>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="#about" onclick="closeMob()">About</a><a href="#services" onclick="closeMob()">Services</a><a href="#timings" onclick="closeMob()">Timings</a><a href="#reviews" onclick="closeMob()">Reviews</a><a href="#faq" onclick="closeMob()">FAQ</a><a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="#booking" class="mob-cta" onclick="closeMob()">📅 Book Appointment</a>
+</div>
+<section class="hero" id="home">
+  <div class="bubbles"><div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge"><span class="dot"></span><span>Kalyani's Best Child Specialist</span></div>
+      <h1>Caring for <em>Little Lives</em><br>with Big Hearts</h1>
+      <p class="hero-desc">Expert paediatric care by Dr. Rituparna Manna — dedicated child specialist serving Kalyani, Nadia with compassionate, evidence-based healthcare for newborns to adolescents.</p>
+      <div class="hero-chips"><span class="chip">⭐ 5.0 Google Rating</span><span class="chip">👶 Newborn to Adolescent</span><span class="chip">💉 Vaccination Expert</span><span class="chip">🏥 Kalyani, Nadia</span></div>
+      <div class="hero-actions"><a href="#booking" class="btn-p">📅 Book Appointment</a><a href="#contact" class="btn-p-out">📍 Find the Clinic</a></div>
+      <div class="hero-stats">
+        <div class="hst"><div class="num">5.0</div><div class="lbl">Google Rating</div></div>
+        <div class="hst"><div class="num">1000+</div><div class="lbl">Happy Kids</div></div>
+        <div class="hst"><div class="num">10+</div><div class="lbl">Years Exp.</div></div>
+        <div class="hst"><div class="num">Kalyani</div><div class="lbl">Nadia, W.B.</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="doc-photo-wrap">
+        <div class="doc-photo-frame"><img src="doctor.png" alt="Dr. Rituparna Manna – Child Specialist Kalyani"/></div>
+        <div class="doc-badge">
+          <div class="doc-badge-av">👩‍⚕️</div>
+          <div><div class="doc-badge-name">Dr. Rituparna Manna</div><div class="doc-badge-deg">MBBS · Child Specialist & Paediatrician</div></div>
+          <div class="doc-badge-rating"><div class="sc">5.0</div><div class="st">★★★★★</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about"><div class="wrap"><div class="about-g">
+  <div class="about-panel fi">
+    <img class="about-photo" src="doctor.png" alt="Dr. Rituparna Manna"/>
+    <h3>Dr. Rituparna Manna</h3><div class="sub">Child Specialist & Paediatrician · Kalyani</div>
+    <ul class="cred-list"><li>MBBS – Qualified Child Specialist</li><li>Specialised in Paediatric Medicine</li><li>Newborn & Neonatal Care Expert</li><li>Vaccination & Immunisation Specialist</li><li>Growth & Developmental Assessment</li><li>Paediatric Infectious Disease Management</li><li>Nutritional Counselling for Children</li></ul>
+    <div class="tag-row"><span class="ptag">Newborn Care</span><span class="ptag">Vaccination</span><span class="ptag">Growth Monitoring</span><span class="ptag">Fever</span><span class="ptag">Child Nutrition</span></div>
+  </div>
+  <div class="fi">
+    <span class="stag">About the Doctor</span><h2 class="sec-h">Where Every Child Gets the Care They Deserve</h2>
+    <p class="about-text" style="color:var(--muted);line-height:1.82;margin-bottom:14px;font-size:15px;">Dr. Rituparna Manna is one of Kalyani's most trusted and loved child specialists, known for her warm, child-friendly approach and clinical excellence. She has built a reputation for making children feel comfortable and parents feel reassured at every visit.</p>
+    <p style="color:var(--muted);line-height:1.82;margin-bottom:14px;font-size:15px;">Her practice covers the entire spectrum of childhood healthcare — from managing newborn health in the first days of life, through the critical early years of growth and development, to adolescent medicine. Dr. Manna combines academic rigour with genuine empathy, ensuring each child receives individualized, evidence-based care.</p>
+    <p style="color:var(--muted);line-height:1.82;margin-bottom:14px;font-size:15px;">Her clinic in Kalyani is known for its child-friendly environment, minimal waiting times, and thorough consultations. Parents across Nadia trust Dr. Manna as their go-to child specialist for everything from routine checkups and vaccinations to managing complex paediatric conditions.</p>
+    <div class="spec-g"><div class="spec-c"><div class="ico">🍼</div><h4>Newborn Care</h4></div><div class="spec-c"><div class="ico">💉</div><h4>Vaccination</h4></div><div class="spec-c"><div class="ico">📏</div><h4>Growth Monitoring</h4></div><div class="spec-c"><div class="ico">🌡️</div><h4>Fever & Infections</h4></div><div class="spec-c"><div class="ico">🧠</div><h4>Development Assessment</h4></div><div class="spec-c"><div class="ico">🥗</div><h4>Child Nutrition</h4></div></div>
+  </div>
+</div></div></section>
+<section id="services"><div class="wrap">
+  <span class="stag">Our Services</span><h2 class="sec-h">Comprehensive Paediatric Care</h2><p class="sec-d">From the very first day of life through adolescence — expert care at every stage of your child's journey.</p>
+  <div class="svc-g">
+    <div class="svc-c fi"><div class="svc-ico">🍼</div><h3>Newborn & Neonatal Care</h3><p>Complete health assessment for newborns including birth examination, jaundice management, feeding support, weight monitoring and early developmental checks.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">💉</div><h3>Vaccination & Immunisation</h3><p>Comprehensive vaccine schedules following IAP and government guidelines for all ages. Expert counselling on vaccine safety and importance for parents.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">📏</div><h3>Growth & Development Monitoring</h3><p>Regular assessment of height, weight, head circumference and developmental milestones. Early identification of delays and timely specialist referral.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">🌡️</div><h3>Fever & Paediatric Infections</h3><p>Diagnosis and treatment of childhood fevers, viral and bacterial infections, typhoid, dengue, respiratory infections, UTIs, and skin infections.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">🫁</div><h3>Respiratory & Asthma Care</h3><p>Management of asthma, wheezing, recurrent cough, bronchitis, and pneumonia in children with nebulisation guidance and long-term management plans.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">🥗</div><h3>Nutrition & Feeding Guidance</h3><p>Breastfeeding support, weaning advice, nutrition counselling for underweight or overweight children, iron deficiency anaemia management and dietary planning.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">🧠</div><h3>Behavioural & Developmental Issues</h3><p>Assessment of speech delays, ADHD, learning difficulties, autism spectrum concerns, sleep problems, and school-related behavioural issues with appropriate referral.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">🏥</div><h3>General Paediatric OPD</h3><p>Routine well-child checkups, school fitness certificates, pre-travel advice, management of chronic childhood conditions, second opinions, and report review.</p></div>
+    <div class="svc-c fi"><div class="svc-ico">👦</div><h3>Adolescent Health</h3><p>Healthcare for teenagers covering puberty-related concerns, adolescent nutrition, acne, menstrual health guidance, mental wellness counselling and lifestyle advice.</p></div>
+  </div>
+</div></section>
+<section id="timings"><div class="wrap">
+  <span class="stag">Clinic Hours</span><h2 class="sec-h">Visiting Hours & Location</h2><p class="sec-d">Dr. Rituparna Manna holds OPD sessions at her clinic in Kalyani, Nadia, West Bengal.</p>
+  <div class="t-grid">
+    <div class="t-c fi"><div class="t-hd"><div class="t-num">1</div><div><div class="t-nm">Dr. Manna's Clinic</div><div class="t-tp">Paediatric OPD · Kalyani, Nadia</div></div></div><div class="t-rows"><div class="t-row"><span class="t-day">🌅 Monday – Friday</span><span class="t-time">9:00 AM – 12:00 PM</span></div><div class="t-row"><span class="t-day">🌆 Monday – Friday</span><span class="t-time">5:00 PM – 8:00 PM</span></div><div class="t-row"><span class="t-day">📅 Saturday</span><span class="t-time">9:00 AM – 1:00 PM</span></div><div class="t-row"><span class="t-day">☀️ Sunday</span><span class="t-time">By Appointment</span></div></div><div class="t-addr">📍 Kalyani, Nadia, West Bengal – 741235</div></div>
+    <div class="t-c fi"><div class="t-hd"><div class="t-num">ℹ</div><div><div class="t-nm">What to Bring</div><div class="t-tp">Before Your Visit</div></div></div><div class="t-rows"><div class="t-row"><span class="t-day">📋 Previous prescriptions & reports</span></div><div class="t-row"><span class="t-day">💉 Vaccination record / immunisation card</span></div><div class="t-row"><span class="t-day">📏 Birth record & growth chart (if any)</span></div><div class="t-row"><span class="t-day">🆔 Parent ID for first visit</span></div></div></div>
+    <div class="t-c fi" style="grid-column:1/-1;max-width:520px"><div class="t-hd"><div class="t-num" style="background:#FFD700;color:#3d1050">★</div><div><div class="t-nm">Find Us Online</div><div class="t-tp">Google Maps</div></div></div><div class="t-rows"><div class="t-row"><span class="t-day">⭐ Google Rating</span><span class="t-time">5.0 / 5 ★</span></div><div class="t-row"><span class="t-day">💬 Online Booking</span><span class="t-time">Available Below</span></div></div><div class="t-addr" style="margin-top:14px"><a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank" style="color:#FFD700;font-weight:700;text-decoration:none">📍 Open Clinic on Google Maps →</a></div></div>
+  </div>
+</div></section>
+<section id="booking"><div class="wrap">
+  <span class="stag">Appointments</span><h2 class="sec-h">Book Your Child's Appointment</h2><p class="sec-d">Quick, easy online booking — fill in your details and we'll confirm your slot within 2 hours.</p>
+  <div class="bk-wrap fi">
+    <div class="b-side">
+      <h3>Why Book Online?</h3><p>Reserve your child's slot in advance and skip the queue. We respond within 2 hours during clinic hours.</p>
+      <div class="b-feat"><div class="b-ico">⚡</div><div><strong style="color:#fff">Fast Confirmation</strong><br>WhatsApp or call within 2 hours.</div></div>
+      <div class="b-feat"><div class="b-ico">👶</div><div><strong style="color:#fff">Child-Friendly</strong><br>Designed for parents — quick and simple.</div></div>
+      <div class="b-feat"><div class="b-ico">📅</div><div><strong style="color:#fff">Choose Your Slot</strong><br>Morning or evening OPD to suit your schedule.</div></div>
+      <div class="b-feat"><div class="b-ico">🔒</div><div><strong style="color:#fff">Private & Safe</strong><br>Your child's health info is fully confidential.</div></div>
+      <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)"><p style="font-size:11.5px;color:rgba(255,255,255,.4)">Find us on Google Maps:</p><a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank" style="color:#FFD700;font-size:13px;font-weight:700;text-decoration:none">📍 Dr. Rituparna Manna – Child Specialist</a></div>
+    </div>
+    <div class="b-form" id="bForm">
+      <div class="steps"><div class="st"><div class="stc active" id="sc1">1</div><span class="stl active" id="sl1">Child Info</span></div><div class="stline"></div><div class="st"><div class="stc" id="sc2">2</div><span class="stl" id="sl2">Slot & Reason</span></div><div class="stline"></div><div class="st"><div class="stc" id="sc3">3</div><span class="stl" id="sl3">Confirm</span></div></div>
+      <div class="fs active" id="s1">
+        <h3>Child & Parent Details</h3>
+        <div class="fr"><div class="fg"><label>Child's Name *</label><input type="text" id="cn" placeholder="e.g. Arjun Das"/></div><div class="fg"><label>Child's Age *</label><input type="text" id="ca" placeholder="e.g. 3 years / 6 months"/></div></div>
+        <div class="fr"><div class="fg"><label>Parent/Guardian Name *</label><input type="text" id="pn" placeholder="e.g. Supriya Das"/></div><div class="fg"><label>Phone Number *</label><input type="tel" id="pp" placeholder="e.g. 9876543210"/></div></div>
+        <div class="fr"><div class="fg"><label>Child's Gender</label><select id="cg"><option value="">Select</option><option>Boy</option><option>Girl</option><option>Prefer not to say</option></select></div><div class="fg"><label>Visit Type</label><select id="vt"><option value="">Select</option><option>First Visit</option><option>Follow-up</option><option>Vaccination</option><option>Well-child Checkup</option><option>Urgent Consultation</option></select></div></div>
+        <button class="btn-sub" onclick="nxt(1)">Continue to Slot Selection →</button>
+      </div>
+      <div class="fs" id="s2">
+        <h3>Choose Appointment Slot</h3>
+        <div class="fr"><div class="fg"><label>Preferred Date *</label><input type="date" id="fd"/></div><div class="fg"><label>Session *</label><select id="fs2"><option value="">Select Session</option><option>Morning: 9:00 AM – 12:00 PM</option><option>Evening: 5:00 PM – 8:00 PM</option><option>Saturday: 9:00 AM – 1:00 PM</option></select></div></div>
+        <div class="fg"><label>Child's Symptoms / Chief Complaint</label><textarea id="fc" placeholder="Describe your child's main concern — e.g. fever, cough, vaccination due, growth concern, rash…"></textarea></div>
+        <div class="fg"><label>Additional Notes for Doctor</label><textarea id="fn2" placeholder="Previous reports, allergies, or current medications…" style="min-height:60px"></textarea></div>
+        <div style="display:flex;gap:11px"><button class="btn-sub" onclick="prv(2)" style="background:var(--border);color:var(--text);box-shadow:none">← Back</button><button class="btn-sub" onclick="nxt(2)">Review Booking →</button></div>
+      </div>
+      <div class="fs" id="s3">
+        <h3>Review & Confirm</h3>
+        <div id="summ" style="background:var(--lavender);border-radius:10px;padding:18px;margin-bottom:18px;font-size:13.5px;color:var(--text);line-height:2;border:1px solid var(--border)"></div>
+        <p style="font-size:11.5px;color:var(--muted);margin-bottom:15px">📌 This is an appointment request. We'll confirm your child's slot by phone or WhatsApp within 2 hours during OPD hours.</p>
+        <div style="display:flex;gap:11px"><button class="btn-sub" onclick="prv(3)" style="background:var(--border);color:var(--text);box-shadow:none">← Edit</button><button class="btn-sub" onclick="confirmAppt()">✅ Confirm Appointment</button></div>
+      </div>
+      <div class="sbox" id="sBox"><div class="stick">✅</div><h4>Booking Request Sent!</h4><p>Thank you! Dr. Manna's clinic will contact you within 2 hours to confirm your child's appointment slot.</p><p style="margin-top:11px;font-weight:700;color:var(--plum)">📍 <a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank" style="color:var(--plum);text-decoration:none">View Clinic on Google Maps</a></p><button class="btn-sub" style="margin-top:18px;width:auto;padding:11px 26px" onclick="resetForm()">Book Another Appointment</button></div>
+    </div>
+  </div>
+</div></section>
+<section id="reviews"><div class="wrap">
+  <span class="stag">Patient Feedback</span><h2 class="sec-h">What Parents Say</h2>
+  <div class="r-banner fi"><div class="rbig"><div class="num">5.0</div><div class="stars">★★★★★</div><div class="cnt">Google Maps · Verified Reviews</div></div><div class="rbars"><div class="br"><span class="brl">5 ★</span><div class="brt"><div class="brf" style="width:96%"></div></div><span style="color:rgba(255,255,255,.55);font-size:11.5px">96%</span></div><div class="br"><span class="brl">4 ★</span><div class="brt"><div class="brf" style="width:3%"></div></div><span style="color:rgba(255,255,255,.55);font-size:11.5px">3%</span></div><div class="br"><span class="brl">3 ★</span><div class="brt"><div class="brf" style="width:1%;background:#aaa"></div></div><span style="color:rgba(255,255,255,.55);font-size:11.5px">1%</span></div><div class="br"><span class="brl">2 ★</span><div class="brt"><div class="brf" style="width:0;background:#888"></div></div><span style="color:rgba(255,255,255,.55);font-size:11.5px">0%</span></div><div class="br"><span class="brl">1 ★</span><div class="brt"><div class="brf" style="width:0;background:#666"></div></div><span style="color:rgba(255,255,255,.55);font-size:11.5px">0%</span></div></div><div class="rplats"><div class="rplat"><div class="pn">Google Maps</div><div class="ps">5.0 ★</div><div class="pc">Verified Reviews</div></div><div class="rplat"><div class="pn">Kalyani's Best</div><div class="ps">Child Specialist</div><div class="pc">Nadia, W.B.</div></div></div></div>
+  <div class="rev-g">
+    <div class="rev-c fi"><div class="rev-hd"><div class="rev-av">S</div><div><div class="rev-nm">Suchitra Biswas</div><div class="rev-dt">Google · 1 month ago</div></div></div><div class="rev-st">★★★★★</div><p class="rev-tx">Dr. Rituparna Manna is simply the best child specialist in Kalyani. My son had repeated fever episodes and she diagnosed correctly within minutes. Very warm with children — my son actually likes going to the doctor now!</p></div>
+    <div class="rev-c fi"><div class="rev-hd"><div class="rev-av">A</div><div><div class="rev-nm">Arindam Chakraborty</div><div class="rev-dt">Google · 2 months ago</div></div></div><div class="rev-st">★★★★★</div><p class="rev-tx">Excellent paediatrician! She handled our newborn's jaundice case with great expertise and calmed our anxiety as first-time parents. Always available to answer queries. Highly recommended!</p></div>
+    <div class="rev-c fi"><div class="rev-hd"><div class="rev-av">P</div><div><div class="rev-nm">Paramita Roy</div><div class="rev-dt">Google · 3 months ago</div></div></div><div class="rev-st">★★★★★</div><p class="rev-tx">Our daughter has been under Dr. Manna's care since birth. Her vaccination schedule guidance is excellent and she always takes time to explain everything clearly. Clinic is clean and staff very friendly.</p></div>
+    <div class="rev-c fi"><div class="rev-hd"><div class="rev-av">D</div><div><div class="rev-nm">Dipak Mondal</div><div class="rev-dt">Google · 1 month ago</div></div></div><div class="rev-st">★★★★★</div><p class="rev-tx">We consulted Dr. Manna for our son's growth delay concerns. She assessed him thoroughly, explained everything in simple language, and the treatment worked brilliantly. She is our family's trusted paediatrician.</p></div>
+    <div class="rev-c fi"><div class="rev-hd"><div class="rev-av">M</div><div><div class="rev-nm">Mridula Sen</div><div class="rev-dt">Google · 2 months ago</div></div></div><div class="rev-st">★★★★★</div><p class="rev-tx">What sets Dr. Manna apart is her patience and the way she connects with children. My daughter used to fear doctors but now she looks forward to visits. Her nutrition advice for picky eaters has been a game changer!</p></div>
+    <div class="rev-c fi"><div class="rev-hd"><div class="rev-av">K</div><div><div class="rev-nm">Kaustav Das</div><div class="rev-dt">Google · 3 weeks ago</div></div></div><div class="rev-st">★★★★★</div><p class="rev-tx">Best decision we made for our child's health was consulting Dr. Rituparna Manna. She is thorough, knowledgeable and genuinely cares. Emergency consultations are handled promptly. 5 stars without doubt.</p></div>
+  </div>
+</div></section>
+<section id="faq"><div class="wrap">
+  <span class="stag">FAQ</span><h2 class="sec-h">Parents Ask, We Answer</h2><p class="sec-d">Common questions about paediatric consultations, vaccinations, and appointments.</p>
+  <div class="faq-g">
+    <div class="faq-i"><div class="faq-q" onclick="tog(this)">At what age should I bring my newborn for the first visit?<div class="faq-arr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="faq-a">Ideally within 3–5 days of hospital discharge. Dr. Manna will assess weight, feeding, jaundice, and overall health, and guide you on the vaccination schedule.</div></div>
+    <div class="faq-i"><div class="faq-q" onclick="tog(this)">Does Dr. Manna follow the IAP vaccination schedule?<div class="faq-arr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="faq-a">Yes. Dr. Manna follows the Indian Academy of Paediatrics (IAP) recommended schedule and counsels parents on optional vaccines to give their children the best protection.</div></div>
+    <div class="faq-i"><div class="faq-q" onclick="tog(this)">My child has a fever — should I book an appointment?<div class="faq-arr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="faq-a">For fever above 102°F, lasting more than 48 hours, or with rash/vomiting/breathing difficulty, please book urgently. Select "Urgent Consultation" in the booking form.</div></div>
+    <div class="faq-i"><div class="faq-q" onclick="tog(this)">How often should I bring my child for routine checkups?<div class="faq-arr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="faq-a">Under 2 years: well-child visits at 1, 2, 3, 6, 9, 12, 15, 18 and 24 months. After age 2, annual checkups are advisable. Dr. Manna will guide you on the ideal schedule.</div></div>
+    <div class="faq-i"><div class="faq-q" onclick="tog(this)">Does Dr. Manna see adolescent patients (teenagers)?<div class="faq-arr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="faq-a">Yes. Dr. Manna provides paediatric care up to 18 years, including puberty concerns, nutrition, acne, menstrual health guidance, mental wellness, and school health advice.</div></div>
+    <div class="faq-i"><div class="faq-q" onclick="tog(this)">How will I receive my appointment confirmation?<div class="faq-arr"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div><div class="faq-a">The clinic will contact you by phone or WhatsApp within 2 hours during OPD hours (9 AM–8 PM, Monday to Saturday) to confirm your exact appointment time.</div></div>
+  </div>
+</div></section>
+<section id="contact"><div class="wrap">
+  <span class="stag">Get in Touch</span><h2 class="sec-h">Clinic Location & Contact</h2><p class="sec-d">Find Dr. Manna's clinic in Kalyani or use Google Maps for easy directions.</p>
+  <div class="con-g">
+    <div class="c-cards">
+      <div class="c-card fi"><div class="cico">📍</div><div><div class="clbl">Clinic Address</div><div class="cval">Kalyani, Nadia, West Bengal – 741235<br><small style="font-weight:500;color:var(--muted)">(22.9751°N 88.4361°E · See Google Maps)</small></div></div></div>
+      <div class="c-card fi"><div class="cico">🕐</div><div><div class="clbl">OPD Hours</div><div class="cval">Mon–Fri: 9 AM–12 PM & 5–8 PM<br>Saturday: 9 AM–1 PM · Sun: By Appt</div></div></div>
+      <div class="c-card fi"><div class="cico">👶</div><div><div class="clbl">Specialty</div><div class="cval">Child Specialist & Paediatrician<br>Newborn to Adolescent Care (0–18 yrs)</div></div></div>
+      <div class="c-card fi"><div class="cico">⭐</div><div><div class="clbl">Online Reviews</div><div class="cval"><a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank">Google Maps Profile – 5.0 ★</a></div></div></div>
+      <a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank" style="display:block;text-align:center;background:var(--plum);padding:13px 26px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;color:#fff">📍 Open in Google Maps</a>
+    </div>
+    <div><div class="map-b"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673!2d88.4361065!3d22.9751733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f895bf29368be5%3A0xd02aaa11e1e76ef8!2sDr+Rituparna+Manna+-+The+Best+Child+Specialist+doctor+in+Kalyani!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
+  </div>
+</div></section>
+<footer><div class="foot-g">
+  <div class="fbrand"><div class="flogo"><div class="flogo-ico">👶</div><span>Dr. Rituparna Manna</span></div><p>Kalyani's most trusted child specialist and paediatrician. Comprehensive care for newborns, children and adolescents — because every child deserves the best start in life.</p><div class="socials"><a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank" class="soc">G</a><a href="#booking" class="soc">📅</a></div></div>
+  <div class="fcol"><h4>Services</h4><ul><li><a href="#services">Newborn Care</a></li><li><a href="#services">Vaccination</a></li><li><a href="#services">Growth Monitoring</a></li><li><a href="#services">Fever & Infections</a></li><li><a href="#services">Child Nutrition</a></li><li><a href="#services">Adolescent Health</a></li></ul></div>
+  <div class="fcol"><h4>Information</h4><ul><li><a href="#about">About Dr. Manna</a></li><li><a href="#timings">Clinic Timings</a></li><li><a href="#reviews">Parent Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+  <div class="fcol"><h4>Quick Access</h4><ul><li><a href="#booking">📅 Book Appointment</a></li><li><a href="#contact">📍 Find the Clinic</a></li><li><a href="https://maps.app.goo.gl/8khBc2vmt83ZrYjn7" target="_blank">🗺 Google Maps</a></li><li><a href="#home">⬆ Back to Top</a></li></ul></div>
+</div><div class="fbot"><p>© 2025 Dr. Rituparna Manna – Child Specialist · Kalyani, Nadia, West Bengal · All rights reserved</p><p><a href="#home">Back to top ↑</a></p></div></footer>
+<a href="https://wa.me/91" target="_blank" class="wa" title="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>18));
+document.getElementById('ham').addEventListener('click',()=>document.getElementById('mobNav').classList.toggle('open'));
+function closeMob(){document.getElementById('mobNav').classList.remove('open')}
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*70)})},{threshold:0.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+document.getElementById('fd').min=new Date().toISOString().split('T')[0];
+let cur=1;
+function nxt(step){
+  if(step===1&&(!document.getElementById('cn').value.trim()||!document.getElementById('pp').value.trim()||!document.getElementById('pn').value.trim())){alert('Please fill in child name, parent name, and phone number.');return}
+  if(step===2&&(!document.getElementById('fd').value||!document.getElementById('fs2').value)){alert('Please select a date and session.');return}
+  if(step===2)buildSum();
+  document.getElementById('s'+step).classList.remove('active');cur=step+1;document.getElementById('s'+cur).classList.add('active');updSt()
+}
+function prv(step){document.getElementById('s'+step).classList.remove('active');cur=step-1;document.getElementById('s'+cur).classList.add('active');updSt()}
+function updSt(){for(let i=1;i<=3;i++){document.getElementById('sc'+i).className='stc'+(i<cur?' done':i===cur?' active':'');document.getElementById('sl'+i).className='stl'+(i===cur?' active':'')}}
+function buildSum(){
+  const g=id=>{const el=document.getElementById(id);return el&&el.value||'–'};
+  document.getElementById('summ').innerHTML='<strong style="color:var(--plum)">Child Name:</strong> '+g('cn')+'<br><strong style="color:var(--plum)">Age / Gender:</strong> '+g('ca')+' / '+g('cg')+'<br><strong style="color:var(--plum)">Parent:</strong> '+g('pn')+'<br><strong style="color:var(--plum)">Phone:</strong> '+g('pp')+'<hr style="border:none;border-top:1px solid var(--border);margin:8px 0"><strong style="color:var(--plum)">Date:</strong> '+g('fd')+'<br><strong style="color:var(--plum)">Session:</strong> '+g('fs2')+'<br><strong style="color:var(--plum)">Visit Type:</strong> '+g('vt')+'<br><strong style="color:var(--plum)">Symptoms:</strong> '+g('fc')
+}
+function confirmAppt(){document.getElementById('s3').classList.remove('active');document.getElementById('sBox').style.display='block'}
+function resetForm(){document.getElementById('sBox').style.display='none';document.getElementById('s1').classList.add('active');cur=1;updSt();['cn','ca','pn','pp','fc','fn2','fd'].forEach(id=>document.getElementById(id).value='');['cg','vt','fs2'].forEach(id=>document.getElementById(id).selectedIndex=0)}
+function tog(el){const item=el.parentElement;const was=item.classList.contains('open');document.querySelectorAll('.faq-i').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open')}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-74,behavior:'smooth'})}})});
+</script>
+</body>
+</html>
